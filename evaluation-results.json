@@ -1,0 +1,138 @@
+{
+  "evaluation": {
+    "date": "2025-12-12",
+    "test_words": ["שלום", "פירגון"],
+    "prompt_template": "A banner graphic with the word {word} written in large font",
+    "aspect_ratio": "16:9",
+    "scoring": "binary (1 = correct Hebrew text, 0 = fail)"
+  },
+  "scores": [
+    {
+      "model": "Gemini 3 Pro",
+      "model_id": "fal-ai/gemini-3-pro-image-preview",
+      "shalom": 1,
+      "firgun": 1,
+      "total": 2,
+      "notes": "Best performer - demonstrated contextual understanding (added relevant emojis for פירגון)"
+    },
+    {
+      "model": "Nano Banana Pro",
+      "model_id": "fal-ai/nano-banana-pro",
+      "shalom": 1,
+      "firgun": 1,
+      "total": 2,
+      "notes": "Reliable Hebrew rendering"
+    },
+    {
+      "model": "Wan 2.5",
+      "model_id": "fal-ai/wan-25-preview/text-to-image",
+      "shalom": 0,
+      "firgun": 1,
+      "total": 1,
+      "notes": "Partial success"
+    },
+    {
+      "model": "Flux 2",
+      "model_id": "fal-ai/flux-2",
+      "shalom": 0,
+      "firgun": 0,
+      "total": 0,
+      "notes": "Hebrew mixed with Latin; nonsensical"
+    },
+    {
+      "model": "Flux 2 Pro",
+      "model_id": "fal-ai/flux-2-pro",
+      "shalom": 0,
+      "firgun": 0,
+      "total": 0,
+      "notes": "Missing/nonsensical letters"
+    },
+    {
+      "model": "Flux Dev",
+      "model_id": "fal-ai/flux/dev",
+      "shalom": 0,
+      "firgun": 0,
+      "total": 0,
+      "notes": "Wrong script (Arabic, English)"
+    },
+    {
+      "model": "Imagen 4",
+      "model_id": "fal-ai/imagen4/preview",
+      "shalom": 0,
+      "firgun": 0,
+      "total": 0,
+      "notes": "Hebrew letters but nonsensical words"
+    },
+    {
+      "model": "Ideogram V2",
+      "model_id": "fal-ai/ideogram/v2",
+      "shalom": 0,
+      "firgun": 0,
+      "total": 0,
+      "notes": "Russian-like text"
+    },
+    {
+      "model": "Qwen Image",
+      "model_id": "fal-ai/qwen-image",
+      "shalom": 0,
+      "firgun": 0,
+      "total": 0,
+      "notes": "Invalid/nonsensical characters"
+    },
+    {
+      "model": "SD 3.5 Large",
+      "model_id": "fal-ai/stable-diffusion-v35-large",
+      "shalom": 0,
+      "firgun": 0,
+      "total": 0,
+      "notes": "Nonsensical"
+    },
+    {
+      "model": "Recraft V3",
+      "model_id": "fal-ai/recraft/v3/text-to-image",
+      "shalom": 0,
+      "firgun": 0,
+      "total": 0,
+      "notes": "Invalid characters / English"
+    },
+    {
+      "model": "Aura Flow",
+      "model_id": "fal-ai/aura-flow",
+      "shalom": 0,
+      "firgun": 0,
+      "total": 0,
+      "notes": "English / invalid Hebrew-like"
+    }
+  ],
+  "winners": [
+    {
+      "rank": 1,
+      "model": "Gemini 3 Pro",
+      "score": "2/2",
+      "highlight": "Best overall with contextual understanding"
+    },
+    {
+      "rank": 1,
+      "model": "Nano Banana Pro",
+      "score": "2/2",
+      "highlight": "Reliable Hebrew rendering"
+    }
+  ],
+  "failed_both_tests": [
+    "Flux 2",
+    "Flux 2 Pro",
+    "Flux Dev",
+    "Imagen 4",
+    "Ideogram V2",
+    "Qwen Image",
+    "SD 3.5 Large",
+    "Recraft V3",
+    "Aura Flow"
+  ],
+  "summary": {
+    "total_models": 12,
+    "models_passed_both": 2,
+    "models_passed_one": 1,
+    "models_failed_both": 9
+  }
+}
