@@ -8,8 +8,17 @@ This evaluation tests 12 image generation models on two Hebrew words:
 - **שלום** (Shalom) - The most famous Hebrew word
 - **פירגון** (Firgun) - A less common word meaning "joy in sharing others' success"
 
-**Prompt template:** "A banner graphic with the word [word] written in large font"
 **Aspect ratio:** 16:9
+
+### Prompts Used
+
+```
+A banner graphic with the word שלום written in large font
+```
+
+```
+A banner graphic with the word פירגון written in large font
+```
 
 ## Results Summary
 
@@ -63,6 +72,10 @@ Flux 2, Flux 2 Pro, Flux Dev, Imagen 4, Ideogram V2, Qwen Image, SD 3.5 Large, R
 
 ![Nano Banana Pro Shalom](samples/good-nano-banana-shalom.png)
 
+**Wan 2.5 - פירגון (Correct)**
+
+![Wan 2.5 Firgun](samples/good-wan-firgun.png)
+
 ### Bad Results
 
 **Ideogram V2 - שלום (Russian-like text)**
@@ -73,7 +86,7 @@ Flux 2, Flux 2 Pro, Flux Dev, Imagen 4, Ideogram V2, Qwen Image, SD 3.5 Large, R
 
 ![Flux Dev Shalom](samples/bad-flux-dev-shalom.png)
 
-**Recraft V3 - פירגון (Random English word)**
+**Recraft V3 - פירגון (Rendered "piragoN" - incorrect transliteration rather than Hebrew)**
 
 ![Recraft V3 Firgun](samples/bad-recraft-firgun.png)
 
@@ -95,4 +108,4 @@ python3 run_eval.py
 
 ## Conclusion
 
-Most image generation models struggle significantly with Hebrew text rendering. Only **Gemini 3 Pro** and **Nano Banana Pro** demonstrated reliable Hebrew typography capabilities. For projects requiring Hebrew text in generated images, these two models are currently the recommended choices.
+Most image generation models struggle significantly with Hebrew text rendering. Only **Gemini 3 Pro** and **Nano Banana Pro** demonstrated reliable Hebrew typography capabilities on both tests. **Wan 2.5** showed partial success, correctly rendering פירגון but failing on שלום—making it the only non-Google model to successfully render any Hebrew word. For projects requiring Hebrew text in generated images, Gemini 3 Pro and Nano Banana Pro are currently the recommended choices.
