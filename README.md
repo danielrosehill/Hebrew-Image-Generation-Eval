@@ -2,7 +2,7 @@
 
 ![Hebrew rendering comparison - Gemini and Wan succeed, Ideogram and Recraft fail](samples/hero-composite.png)
 
-An evaluation of major text-to-image models on their ability to accurately render Hebrew text.
+An evaluation of major text-to-image models on their ability to accurately render Hebrew text (prompts: English with request to generate Hebrew word).
 
 ## Overview
 
@@ -108,6 +108,40 @@ export FAL_KEY="your-fal-api-key"
 python3 run_eval.py
 ```
 
+## Series 2: Hebrew Prompts
+
+A follow-up test using prompts written entirely in Hebrew to see if prompt language affects rendering accuracy.
+
+### Prompts Used (Series 2)
+
+```
+גרפיקה עם המילה שלום בגופן גדול
+```
+
+```
+גרפיקה עם המילה פירגון בגופן גדול
+```
+
+### Results (Series 2)
+
+| Model | שלום | פירגון | Score |
+|-------|:----:|:------:|:-----:|
+| **Nano Banana Pro** | ✓ | ✓ | **2/2** |
+| Wan 2.5 | ✗ | ✓ | 1/2 |
+| Flux 2 | ✗ | ✗ | 0/2 |
+| Flux Dev | ✗ | ✗ | 0/2 |
+
+### Series 2 Findings
+
+- **Prompt language had no noticeable effect** on results—models that succeeded with English prompts also succeeded with Hebrew prompts, and vice versa.
+- **Nano Banana Pro** demonstrated impressive contextual understanding, maintaining reliable Hebrew rendering regardless of prompt language.
+- **Wan 2.5** continued its pattern of succeeding on פירגון but failing on שלום.
+- **Flux models** failed on both words regardless of prompt language.
+
 ## Conclusion
 
-Most image generation models struggle significantly with Hebrew text rendering. Only **Gemini 3 Pro** and **Nano Banana Pro** demonstrated reliable Hebrew typography capabilities on both tests. **Wan 2.5** showed partial success, correctly rendering פירגון but failing on שלום—making it the only non-Google model to successfully render any Hebrew word. For projects requiring Hebrew text in generated images, Gemini 3 Pro and Nano Banana Pro are currently the recommended choices.
+Most image generation models struggle significantly with Hebrew text rendering. Only **Gemini 3 Pro** and **Nano Banana Pro** demonstrated reliable Hebrew typography capabilities on both tests. **Wan 2.5** showed partial success, correctly rendering פירגון but failing on שלום—making it the only non-Google model to successfully render any Hebrew word.
+
+Writing prompts in Hebrew rather than English did not noticeably alter results for better or worse.
+
+For projects requiring Hebrew text in generated images, Gemini 3 Pro and Nano Banana Pro are currently the recommended choices.
