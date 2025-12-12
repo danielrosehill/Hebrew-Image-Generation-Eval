@@ -92,14 +92,21 @@ Flux 2, Flux 2 Pro, Flux Dev, Imagen 4, Ideogram V2, Qwen Image, SD 3.5 Large, R
 
 ![Recraft V3 Firgun](samples/bad-recraft-firgun.png)
 
-## Files
+## Repository Structure
 
-- `evaluation-results.md` - Detailed evaluation notes
-- `evaluation-results.json` - Results in JSON format
-- `hebrew-eval-report.pdf` - Full PDF report with all images
-- `outputs/shalom/` - All generated images for שלום
-- `outputs/firgun/` - All generated images for פירגון
-- `run_eval.py` - Script to run the evaluation
+```
+├── outputs/              # Series 1 generated images
+│   ├── shalom/          # All שלום outputs
+│   └── firgun/          # All פירגון outputs
+├── outputs-series2/      # Series 2 generated images (Hebrew prompts)
+├── samples/              # Curated sample images for README
+├── evaluation-results.md # Detailed evaluation notes
+├── evaluation-results.json
+├── hebrew-eval-report.pdf
+├── models.md             # List of models tested
+├── prompts.md            # Prompts and evaluation criteria
+└── run_eval.py           # Evaluation script
+```
 
 ## Running the Evaluation
 
