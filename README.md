@@ -1,5 +1,7 @@
 # Hebrew Image Generation Evaluation
 
+![Hebrew rendering comparison - Gemini and Wan succeed, Ideogram and Recraft fail](samples/hero-composite.png)
+
 An evaluation of major text-to-image models on their ability to accurately render Hebrew text.
 
 ## Overview
